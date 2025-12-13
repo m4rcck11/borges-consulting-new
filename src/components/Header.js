@@ -28,7 +28,7 @@ const Header = () => {
       <div className="container">
         <nav className="nav">
           <div className="logo-container">
-            <img src="/logo.png" alt="Borges Consulting" className="logo" />
+            <img src="/favicon.svg" alt="Borges Consulting" className="logo" />
           </div>
           
           <div className={`nav-links ${isMobileMenuOpen ? 'nav-mobile-open' : ''}`}>

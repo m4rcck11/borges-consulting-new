@@ -15,7 +15,7 @@ const Footer = () => {
         <div className="footer-content">
           <div className="footer-section">
             <div className="footer-logo">
-              <img src="/logo.png" alt="Borges Consulting" />
+              <img src="/favicon.svg" alt="Borges Consulting" />
             </div>
             <p className="footer-description">
               {t('footer.description')}
