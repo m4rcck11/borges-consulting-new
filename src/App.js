@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import { LanguageProvider } from './contexts/LanguageContext';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -12,17 +13,19 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <Hero />
-      <About />
-      <Stack />
-      <Services />
-      <Projects />
-      <Schedule />
-      <Contact />
-      <Footer />
-    </div>
+    <LanguageProvider>
+      <div className="App">
+        <Header />
+        <Hero />
+        <About />
+        <Stack />
+        <Services />
+        <Projects />
+        <Schedule />
+        <Contact />
+        <Footer />
+      </div>
+    </LanguageProvider>
   );
 }
 

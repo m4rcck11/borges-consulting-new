@@ -114,5 +114,55 @@
     padding: 0.75rem 0;
     text-align: center;
   }
+
+  .language-toggle {
+    width: auto;
+    margin: 1rem auto 0;
+  }
+}
+
+/* Language Toggle Button */
+.language-toggle {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  padding: 8px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
+.flag-icon {
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.language-toggle:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: scale(1.1) rotate(5deg);
+}
+
+.language-toggle:active {
+  transform: scale(0.95);
+}
+
+.header-scrolled .language-toggle {
+  background: rgba(52, 73, 94, 0.05);
+  border-color: rgba(52, 73, 94, 0.2);
+}
+
+.header-scrolled .language-toggle:hover {
+  background: rgba(52, 73, 94, 0.15);
+  border-color: rgba(52, 73, 94, 0.4);
 }
 

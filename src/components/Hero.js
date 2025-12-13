@@ -1,8 +1,11 @@
 import React from 'react';
 import './Hero.css';
 import { FaArrowRight, FaDatabase, FaCode, FaChartLine } from 'react-icons/fa';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Hero = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="home" className="hero">
       <div className="hero-background">
@@ -12,35 +15,34 @@ const Hero = () => {
       <div className="container hero-content">
         <div className="hero-text">
           <h1 className="hero-title">
-            Transforme seus <span className="text-gradient">dados</span> em 
-            <span className="text-gradient"> decisões estratégicas</span>
+            {t('hero.title1')} <span className="text-gradient">{t('hero.title2')}</span> {t('hero.title3')}
+            <span className="text-gradient"> {t('hero.title4')}</span>
           </h1>
           <p className="hero-subtitle">
-            Consultoria especializada em Análise de Dados, Web Scraping e 
-            Desenvolvimento de Sistemas sob medida para o seu negócio
+            {t('hero.subtitle')}
           </p>
           
           <div className="hero-buttons">
             <a href="#schedule" className="btn btn-primary">
-              Agende uma Conversa <FaArrowRight style={{ marginLeft: '8px' }} />
+              {t('hero.cta1')} <FaArrowRight style={{ marginLeft: '8px' }} />
             </a>
             <a href="#services" className="btn btn-secondary">
-              Nossos Serviços
+              {t('hero.cta2')}
             </a>
           </div>
 
           <div className="hero-features">
             <div className="hero-feature">
               <FaDatabase className="feature-icon" />
-              <span>Análise de Dados</span>
+              <span>{t('hero.features.dataAnalysis')}</span>
             </div>
             <div className="hero-feature">
               <FaCode className="feature-icon" />
-              <span>Web Scraping</span>
+              <span>{t('hero.features.webScraping')}</span>
             </div>
             <div className="hero-feature">
               <FaChartLine className="feature-icon" />
-              <span>Business Intelligence</span>
+              <span>{t('hero.features.bi')}</span>
             </div>
           </div>
         </div>

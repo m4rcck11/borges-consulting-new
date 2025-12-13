@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import './Header.css';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { language, toggleLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,7 +16,10 @@ const Header = () => {
   }, []);
 
   const scrollToSection = (sectionId) => {
-    document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
     setIsMobileMenuOpen(false);
   };
 
@@ -28,20 +33,31 @@ const Header = () => {
           
           <div className={`nav-links ${isMobileMenuOpen ? 'nav-mobile-open' : ''}`}>
             <a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }}>
-              Home
+              {t('nav.home')}
             </a>
             <a href="#about" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}>
-              Sobre
+              {t('nav.about')}
             </a>
             <a href="#services" onClick={(e) => { e.preventDefault(); scrollToSection('services'); }}>
-              Serviços
+              {t('nav.services')}
             </a>
             <a href="#schedule" onClick={(e) => { e.preventDefault(); scrollToSection('schedule'); }}>
-              Agendar
+              {t('nav.schedule')}
             </a>
             <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}>
-              Contato
+              {t('nav.contact')}
             </a>
+            
+            <button 
+              className="language-toggle"
+              onClick={toggleLanguage}
+              aria-label="Toggle language"
+              title={language === 'pt' ? 'Switch to English' : 'Mudar para Português'}
+            >
+              <span className="flag-icon">
+                {language === 'pt' ? '🇺🇸' : '🇧🇷'}
+              </span>
+            </button>
           </div>
 
           <button 

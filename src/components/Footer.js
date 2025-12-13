@@ -1,8 +1,10 @@
 import React from 'react';
 import './Footer.css';
 import { FaLinkedin, FaGithub, FaEnvelope, FaWhatsapp, FaArrowUp } from 'react-icons/fa';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Footer = () => {
+  const { t } = useLanguage();
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -16,8 +18,7 @@ const Footer = () => {
               <img src="/logo.png" alt="Borges Consulting" />
             </div>
             <p className="footer-description">
-              Transformando dados em decisões estratégicas. 
-              Consultoria especializada em T.I. para impulsionar seu negócio.
+              {t('footer.description')}
             </p>
             <div className="footer-social">
               <a href="https://linkedin.com/company/borgesconsulting" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
@@ -36,30 +37,30 @@ const Footer = () => {
           </div>
 
           <div className="footer-section">
-            <h4>Serviços</h4>
+            <h4>{t('footer.services')}</h4>
             <ul>
-              <li><a href="#services">Análise de Dados</a></li>
-              <li><a href="#services">Web Scraping</a></li>
-              <li><a href="#services">Business Intelligence</a></li>
-              <li><a href="#services">Desenvolvimento Web</a></li>
-              <li><a href="#services">Sistemas Sob Medida</a></li>
-              <li><a href="#services">Consultoria em T.I.</a></li>
+              <li><a href="#services">{t('hero.features.dataAnalysis')}</a></li>
+              <li><a href="#services">{t('hero.features.webScraping')}</a></li>
+              <li><a href="#services">{t('hero.features.bi')}</a></li>
+              <li><a href="#services">{t('services.items.webDev.title')}</a></li>
+              <li><a href="#services">{t('services.items.customSystems.title')}</a></li>
+              <li><a href="#services">{t('services.items.consulting.title')}</a></li>
             </ul>
           </div>
 
           <div className="footer-section">
-            <h4>Links Rápidos</h4>
+            <h4>{t('footer.quickLinks')}</h4>
             <ul>
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">Sobre Nós</a></li>
-              <li><a href="#services">Serviços</a></li>
-              <li><a href="#schedule">Agendar Reunião</a></li>
-              <li><a href="#contact">Contato</a></li>
+              <li><a href="#home">{t('footer.home')}</a></li>
+              <li><a href="#about">{t('footer.aboutUs')}</a></li>
+              <li><a href="#services">{t('footer.services')}</a></li>
+              <li><a href="#schedule">{t('footer.scheduleCall')}</a></li>
+              <li><a href="#contact">{t('footer.contact')}</a></li>
             </ul>
           </div>
 
           <div className="footer-section">
-            <h4>Contato</h4>
+            <h4>{t('footer.contact')}</h4>
             <ul className="footer-contact">
               <li>
                 <strong>Email:</strong><br />
@@ -75,17 +76,17 @@ const Footer = () => {
 
         <div className="footer-bottom">
           <div className="footer-bottom-content">
-            <p>&copy; 2026 Borges Consulting. Todos os direitos reservados.</p>
+            <p>{t('footer.rights')}</p>
             <div className="footer-bottom-links">
-              <a href="javascript:void(0)">Política de Privacidade</a>
+              <a href="javascript:void(0)">{t('footer.privacy')}</a>
               <span>|</span>
-              <a href="javascript:void(0)">Termos de Uso</a>
+              <a href="javascript:void(0)">{t('footer.terms')}</a>
             </div>
           </div>
         </div>
       </div>
 
-      <button className="scroll-to-top" onClick={scrollToTop} aria-label="Voltar ao topo">
+      <button className="scroll-to-top" onClick={scrollToTop} aria-label={t('footer.backToTop')}>
         <FaArrowUp />
       </button>
     </footer>
