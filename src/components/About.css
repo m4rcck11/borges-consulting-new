@@ -1,0 +1,162 @@
+.about {
+  background: var(--light-gray);
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.section-title {
+  color: var(--primary-blue);
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: 1.25rem;
+  color: var(--primary-teal);
+  margin-bottom: 2rem;
+}
+
+.about-description {
+  margin-bottom: 2.5rem;
+}
+
+.about-description p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+}
+
+.about-description strong {
+  color: var(--primary-blue);
+  font-weight: 600;
+}
+
+.about-values {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.value-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.value-icon {
+  font-size: 1.5rem;
+  color: var(--primary-teal);
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
+.value-item h4 {
+  font-size: 1.1rem;
+  color: var(--primary-blue);
+  margin-bottom: 0.25rem;
+}
+
+.value-item p {
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+.about-image {
+  position: relative;
+}
+
+.image-container {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.image-decoration {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, var(--primary-teal), var(--secondary-teal));
+  border-radius: 50%;
+  opacity: 0.3;
+  z-index: -1;
+}
+
+.stats-container {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  gap: 2rem;
+  z-index: 2;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-item h3 {
+  font-size: 2rem;
+  color: var(--primary-teal);
+  margin-bottom: 0.25rem;
+}
+
+.stat-item p {
+  font-size: 0.9rem;
+  color: var(--text-gray);
+  margin-bottom: 0;
+  white-space: nowrap;
+}
+
+@media (max-width: 968px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .about-image {
+    order: -1;
+    margin-bottom: 2rem;
+  }
+
+  .stats-container {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    margin-top: 2rem;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-container {
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .stat-item h3 {
+    font-size: 1.5rem;
+  }
+
+  .stat-item p {
+    font-size: 0.8rem;
+  }
+}
+

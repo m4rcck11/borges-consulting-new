@@ -1,0 +1,198 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: 80px;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/umberto-FewHpO4VC9Y-unsplash.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: -2;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(26, 58, 82, 0.95) 0%, 
+    rgba(42, 127, 126, 0.9) 100%);
+  z-index: -1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 4rem 0;
+}
+
+.hero-text {
+  max-width: 800px;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #38a169 0%, #48bb78 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-subtitle {
+  font-size: 1.30rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 3.0rem;
+  line-height: 2;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.hero-buttons .btn {
+  padding: 14px 36px;
+  font-size: 1.05rem;
+}
+
+.hero-buttons .btn-primary {
+  display: flex;
+  align-items: center;
+}
+
+.hero-buttons .btn-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--white);
+  color: var(--white);
+  backdrop-filter: blur(10px);
+}
+
+.hero-buttons .btn-secondary:hover {
+  background: var(--white);
+  color: var(--primary-blue);
+}
+
+.hero-features {
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.hero-feature {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.feature-icon {
+  font-size: 1.5rem;
+  color: #48bb78;
+}
+
+.hero-decoration {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.floating-element {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.1;
+  background: var(--white);
+  animation: float 20s infinite ease-in-out;
+}
+
+.element-1 {
+  width: 300px;
+  height: 300px;
+  top: 10%;
+  right: -150px;
+  animation-delay: 0s;
+}
+
+.element-2 {
+  width: 200px;
+  height: 200px;
+  bottom: 20%;
+  left: -100px;
+  animation-delay: 5s;
+}
+
+.element-3 {
+  width: 150px;
+  height: 150px;
+  top: 60%;
+  right: 10%;
+  animation-delay: 10s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-20px) rotate(90deg);
+  }
+  50% {
+    transform: translateY(10px) rotate(180deg);
+  }
+  75% {
+    transform: translateY(-10px) rotate(270deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-features {
+    gap: 1.5rem;
+  }
+
+  .hero-feature {
+    font-size: 0.9rem;
+  }
+}
+
