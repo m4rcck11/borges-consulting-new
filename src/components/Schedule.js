@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import './Schedule.css';
 import { FaCalendarAlt, FaClock, FaVideo, FaPhone } from 'react-icons/fa';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Schedule = () => {
+  const { t } = useLanguage();
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -23,9 +26,8 @@ const Schedule = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Aqui você pode adicionar a lógica para enviar o formulário
     console.log('Formulário enviado:', formData);
-    alert('Obrigado! Entraremos em contato em breve para confirmar sua reunião.');
+    alert(t('schedule.form.successMessage'));
   };
 
   return (
@@ -33,49 +35,49 @@ const Schedule = () => {
       <div className="schedule-background"></div>
       <div className="container">
         <div className="schedule-content">
-          <div className="schedule-info">
-            <h2 className="section-title">Agende uma Conversa</h2>
+          <div className="schedule-info" data-aos="fade-right">
+            <h2 className="section-title">{t('schedule.title')}</h2>
             <p className="section-subtitle">
-              Vamos discutir como podemos ajudar seu negócio a crescer
+              {t('schedule.subtitle')}
             </p>
 
             <div className="schedule-benefits">
-              <h3>Por que agendar conosco?</h3>
+              <h3>{t('schedule.benefitsTitle')}</h3>
               <ul>
                 <li>
                   <FaCalendarAlt className="benefit-icon" />
-                  <span>Consultoria gratuita de 30 minutos</span>
+                  <span>{t('schedule.benefits.consultation')}</span>
                 </li>
                 <li>
                   <FaClock className="benefit-icon" />
-                  <span>Horários flexíveis que se adaptam à sua agenda</span>
+                  <span>{t('schedule.benefits.flexible')}</span>
                 </li>
                 <li>
                   <FaVideo className="benefit-icon" />
-                  <span>Reuniões presenciais ou virtuais</span>
+                  <span>{t('schedule.benefits.meetings')}</span>
                 </li>
                 <li>
                   <FaPhone className="benefit-icon" />
-                  <span>Análise personalizada das suas necessidades</span>
+                  <span>{t('schedule.benefits.analysis')}</span>
                 </li>
               </ul>
             </div>
 
             <div className="schedule-testimonial">
               <blockquote>
-                "O serviço da Borges foi essencial para o sucesso dos nossos projetos de pesquisa graças a serviços de extração e normalização de dados em Big Data e nuvem eficientes."
+                "{t('schedule.testimonial.quote')}"
               </blockquote>
-              <cite>Projeto InSySPO</cite>
+              <cite>{t('schedule.testimonial.author')}</cite>
             </div>
           </div>
 
-          <div className="schedule-form-container">
+          <div className="schedule-form-container" data-aos="fade-left">
             <form className="schedule-form" onSubmit={handleSubmit}>
               <div className="form-group">
                 <input
                   type="text"
                   name="name"
-                  placeholder="Seu Nome *"
+                  placeholder={t('schedule.form.name')}
                   value={formData.name}
                   onChange={handleChange}
                   required
@@ -86,7 +88,7 @@ const Schedule = () => {
                 <input
                   type="email"
                   name="email"
-                  placeholder="Seu E-mail *"
+                  placeholder={t('schedule.form.email')}
                   value={formData.email}
                   onChange={handleChange}
                   required
@@ -97,7 +99,7 @@ const Schedule = () => {
                 <input
                   type="text"
                   name="company"
-                  placeholder="Empresa"
+                  placeholder={t('schedule.form.company')}
                   value={formData.company}
                   onChange={handleChange}
                 />
@@ -110,14 +112,15 @@ const Schedule = () => {
                   onChange={handleChange}
                   required
                 >
-                  <option value="">Selecione o Serviço de Interesse *</option>
-                  <option value="analise-dados">Análise de Dados</option>
-                  <option value="web-scraping">Web Scraping</option>
-                  <option value="business-intelligence">Business Intelligence</option>
-                  <option value="desenvolvimento-web">Desenvolvimento Web</option>
-                  <option value="sistemas">Sistemas Sob Medida</option>
-                  <option value="consultoria">Consultoria em T.I.</option>
-                  <option value="outros">Outros</option>
+                  <option value="">{t('schedule.form.serviceSelect')}</option>
+                  <option value="analise-dados">{t('schedule.services.dataAnalysis')}</option>
+                  <option value="web-scraping">{t('schedule.services.webScraping')}</option>
+                  <option value="business-intelligence">{t('schedule.services.bi')}</option>
+                  <option value="desenvolvimento-web">{t('schedule.services.webDev')}</option>
+                  <option value="sistemas">{t('schedule.services.systems')}</option>
+                  <option value="consultoria">{t('schedule.services.consulting')}</option>
+                  <option value="inovacao">{t('schedule.services.innovation')}</option>
+                  <option value="outros">{t('schedule.services.other')}</option>
                 </select>
               </div>
 
@@ -139,7 +142,7 @@ const Schedule = () => {
                     onChange={handleChange}
                     required
                   >
-                    <option value="">Horário Preferido *</option>
+                    <option value="">{t('schedule.form.time')}</option>
                     <option value="09:00">09:00</option>
                     <option value="10:00">10:00</option>
                     <option value="11:00">11:00</option>
@@ -161,7 +164,7 @@ const Schedule = () => {
                       checked={formData.meetingType === 'video'}
                       onChange={handleChange}
                     />
-                    <span>Videochamada</span>
+                    <span>{t('schedule.form.video')}</span>
                   </label>
                   <label>
                     <input
@@ -171,7 +174,7 @@ const Schedule = () => {
                       checked={formData.meetingType === 'phone'}
                       onChange={handleChange}
                     />
-                    <span>Telefone</span>
+                    <span>{t('schedule.form.phone')}</span>
                   </label>
                   <label>
                     <input
@@ -181,7 +184,7 @@ const Schedule = () => {
                       checked={formData.meetingType === 'presencial'}
                       onChange={handleChange}
                     />
-                    <span>Presencial</span>
+                    <span>{t('schedule.form.inPerson')}</span>
                   </label>
                 </div>
               </div>
@@ -189,7 +192,7 @@ const Schedule = () => {
               <div className="form-group">
                 <textarea
                   name="message"
-                  placeholder="Conte-nos um pouco sobre seu projeto ou desafio"
+                  placeholder={t('schedule.form.message')}
                   rows="4"
                   value={formData.message}
                   onChange={handleChange}
@@ -197,7 +200,7 @@ const Schedule = () => {
               </div>
 
               <button type="submit" className="btn btn-primary btn-submit">
-                Agendar Reunião
+                {t('schedule.form.submit')}
               </button>
             </form>
           </div>
@@ -208,4 +211,3 @@ const Schedule = () => {
 };
 
 export default Schedule;
-

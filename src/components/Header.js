@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Header.css';
+import { FaLock } from 'react-icons/fa';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const Header = () => {
@@ -28,7 +29,7 @@ const Header = () => {
       <div className="container">
         <nav className="nav">
           <div className="logo-container">
-            <img src="/favicon.svg" alt="Borges Consulting" className="logo" />
+            <img src="/logolong.png" alt="Borges Consulting" className="logo" />
           </div>
           
           <div className={`nav-links ${isMobileMenuOpen ? 'nav-mobile-open' : ''}`}>
@@ -47,8 +48,17 @@ const Header = () => {
             <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}>
               {t('nav.contact')}
             </a>
-            
-            <button 
+
+            <button
+              className="btn-database-access"
+              onClick={(e) => e.preventDefault()}
+              title={t('nav.databaseAccess')}
+            >
+              <FaLock />
+              <span>{t('nav.databaseAccess')}</span>
+            </button>
+
+            <button
               className="language-toggle"
               onClick={toggleLanguage}
               aria-label="Toggle language"

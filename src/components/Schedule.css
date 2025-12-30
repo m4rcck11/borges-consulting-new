@@ -54,7 +54,7 @@
 }
 
 .benefit-icon {
-  color: var(--primary-teal);
+  color: #ff751f;
   font-size: 1.25rem;
   flex-shrink: 0;
 }
@@ -183,7 +183,17 @@
   }
 
   .schedule-form-container {
+    padding: 1.25rem;
+  }
+
+  .schedule-testimonial {
     padding: 1.5rem;
   }
+
+  .section-subtitle {
+    font-size: 1.1rem;
+  }
 }
+
+
 

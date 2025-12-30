@@ -53,6 +53,12 @@ const Hero = () => {
         <div className="floating-element element-2"></div>
         <div className="floating-element element-3"></div>
       </div>
+
+      <div className="particles">
+        {[...Array(20)].map((_, i) => (
+          <div key={i} className={`particle particle-${i + 1}`}></div>
+        ))}
+      </div>
     </section>
   );
 };

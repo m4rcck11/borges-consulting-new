@@ -8,12 +8,12 @@ const Projects = () => {
   return (
     <section id="projects" className="projects-section">
       <div className="container">
-        <p className="section-subtitle">{t('projects.subtitle')}</p>
+        <p className="section-subtitle" data-aos="fade-up">{t('projects.subtitle')}</p>
         <div className="logos-container">
-          <div className="logo-item">
+          <div className="logo-item" data-aos="fade-up" data-aos-delay="100">
             <img src="/insyspo.png" alt="Insyspo" className="project-logo" />
           </div>
-          <div className="logo-item">
+          <div className="logo-item" data-aos="fade-up" data-aos-delay="200">
             <div className="project-text">MultiOBS</div>
           </div>
         </div>

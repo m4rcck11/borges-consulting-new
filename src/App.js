@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { LanguageProvider } from './contexts/LanguageContext';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
 import Services from './components/Services';
+import Onboarding from './components/Onboarding';
 import Projects from './components/Projects';
 import Stack from './components/Stack';
 import Schedule from './components/Schedule';
@@ -12,6 +15,15 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 function App() {
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      easing: 'ease-out',
+      once: true,
+      offset: 100,
+    });
+  }, []);
+
   return (
     <LanguageProvider>
       <div className="App">
@@ -20,6 +32,7 @@ function App() {
         <About />
         <Stack />
         <Services />
+        <Onboarding />
         <Projects />
         <Schedule />
         <Contact />

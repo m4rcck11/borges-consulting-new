@@ -39,12 +39,12 @@ const Footer = () => {
           <div className="footer-section">
             <h4>{t('footer.services')}</h4>
             <ul>
-              <li><a href="#services">{t('hero.features.dataAnalysis')}</a></li>
-              <li><a href="#services">{t('hero.features.webScraping')}</a></li>
-              <li><a href="#services">{t('hero.features.bi')}</a></li>
-              <li><a href="#services">{t('services.items.webDev.title')}</a></li>
-              <li><a href="#services">{t('services.items.customSystems.title')}</a></li>
-              <li><a href="#services">{t('services.items.consulting.title')}</a></li>
+              <li><a href="#services">{t('footer.servicesList.dataAnalysis')}</a></li>
+              <li><a href="#services">{t('footer.servicesList.webScraping')}</a></li>
+              <li><a href="#services">{t('footer.servicesList.bi')}</a></li>
+              <li><a href="#services">{t('footer.servicesList.webDev')}</a></li>
+              <li><a href="#services">{t('footer.servicesList.systems')}</a></li>
+              <li><a href="#services">{t('footer.servicesList.consulting')}</a></li>
             </ul>
           </div>
 
@@ -78,9 +78,9 @@ const Footer = () => {
           <div className="footer-bottom-content">
             <p>{t('footer.rights')}</p>
             <div className="footer-bottom-links">
-              <a href="javascript:void(0)">{t('footer.privacy')}</a>
+              <button type="button" onClick={(e) => e.preventDefault()}>{t('footer.privacy')}</button>
               <span>|</span>
-              <a href="javascript:void(0)">{t('footer.terms')}</a>
+              <button type="button" onClick={(e) => e.preventDefault()}>{t('footer.terms')}</button>
             </div>
           </div>
         </div>

@@ -1,25 +1,28 @@
 import React from 'react';
 import './Contact.css';
 import { FaEnvelope, FaPhone, FaWhatsapp, FaMapMarkerAlt, FaLinkedin, FaGithub } from 'react-icons/fa';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Contact = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="contact" className="contact section">
       <div className="container">
-        <div className="contact-header">
-          <h2 className="section-title text-center">Contato</h2>
+        <div className="contact-header" data-aos="fade-up">
+          <h2 className="section-title text-center">{t('contact.title')}</h2>
           <p className="section-subtitle text-center">
-            Estamos prontos para ajudar você a transformar seus desafios em oportunidades
+            {t('contact.subtitle')}
           </p>
         </div>
 
         <div className="contact-content">
-          <div className="contact-info">
+          <div className="contact-info" data-aos="fade-right">
             <div className="contact-card">
               <div className="contact-item">
                 <FaEnvelope className="contact-icon" />
                 <div>
-                  <h4>E-mail</h4>
+                  <h4>{t('contact.email')}</h4>
                   <a href="mailto:contato@borgesconsulting.com.br">contato@borgesconsulting.com.br</a>
                 </div>
               </div>
@@ -27,7 +30,7 @@ const Contact = () => {
               <div className="contact-item">
                 <FaPhone className="contact-icon" />
                 <div>
-                  <h4>Telefone</h4>
+                  <h4>{t('contact.phone')}</h4>
                   <a href="tel:+5511999999999">+55 11 99999-9999</a>
                 </div>
               </div>
@@ -35,7 +38,7 @@ const Contact = () => {
               <div className="contact-item">
                 <FaWhatsapp className="contact-icon whatsapp" />
                 <div>
-                  <h4>WhatsApp</h4>
+                  <h4>{t('contact.whatsapp')}</h4>
                   <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer">
                     +55 11 99999-9999
                   </a>
@@ -45,14 +48,14 @@ const Contact = () => {
               <div className="contact-item">
                 <FaMapMarkerAlt className="contact-icon" />
                 <div>
-                  <h4>Localização</h4>
+                  <h4>{t('contact.location')}</h4>
                   <p>São Paulo, SP - Brasil</p>
                 </div>
               </div>
             </div>
 
             <div className="contact-social">
-              <h4>Siga-nos</h4>
+              <h4>{t('contact.followUs')}</h4>
               <div className="social-links">
                 <a href="https://linkedin.com/company/borgesconsulting" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                   <FaLinkedin />
@@ -65,28 +68,28 @@ const Contact = () => {
 
           </div>
 
-          <div className="contact-form-wrapper">
+          <div className="contact-form-wrapper" data-aos="fade-left">
             <form className="contact-form">
-              <h3>Envie sua mensagem</h3>
-              
+              <h3>{t('contact.form.title')}</h3>
+
               <div className="form-group">
-                <input type="text" placeholder="Nome completo" required />
+                <input type="text" placeholder={t('contact.form.name')} required />
               </div>
 
               <div className="form-group">
-                <input type="email" placeholder="E-mail" required />
+                <input type="email" placeholder={t('contact.form.email')} required />
               </div>
 
               <div className="form-group">
-                <input type="text" placeholder="Assunto" required />
+                <input type="text" placeholder={t('contact.form.subject')} required />
               </div>
 
               <div className="form-group">
-                <textarea placeholder="Sua mensagem" rows="6" required></textarea>
+                <textarea placeholder={t('contact.form.message')} rows="6" required></textarea>
               </div>
 
               <button type="submit" className="btn btn-primary">
-                Enviar Mensagem
+                {t('contact.form.submit')}
               </button>
             </form>
           </div>
